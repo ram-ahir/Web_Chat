@@ -1,0 +1,34 @@
+.dropzone {
+    width: 100%;
+    height: 80px;
+    border: 1px dashed #999;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.upload-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.upload-input {
+    position: relative;
+    top: -62px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.file-info {
+    color: yellow;
+  }
+  
+.remove-btn {
+    background: #ff4d4f;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+  }

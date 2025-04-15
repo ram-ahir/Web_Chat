@@ -1,0 +1,22 @@
+.as{
+    color: #65ebff;
+}
+
+@media (max-width: 480px) {
+    
+    .left-panel{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+.left-panel .search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: inherit; /* match parent bg to prevent overlap */
+}
+.left-pn-itm {
+    max-height: calc(100vh - 120px); /* leave room for header if needed */
+    overflow-y: auto;
+    padding-right: 4px;
+  }
