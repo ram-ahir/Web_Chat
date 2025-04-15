@@ -306,7 +306,10 @@ const Home2 = () => {
                     </div>
 
                     {/* Chat Messages */}
-                    <div className={` flex-grow-1 overflow-auto px-4 py-3 ${isDark ? 'bg-dark' : 'bg-light'}`} >
+                    <div className={` flex-grow-1 overflow-auto px-4 py-3 ${isDark ? 'bg-dark' : 'bg-light'}`} style={{
+                      maxHeight: 'calc(100vh - 185px)', // adjust according to your header and input height
+                      overflowY: 'auto'
+                    }}>
                       {messages.map((msg, index) => {
                         if (msg.sender == hostuseremail) {
                           return (
@@ -371,7 +374,12 @@ const Home2 = () => {
                     </div>
 
                     {/* Message Input */}
-                    <div className={`p-3 border-top d-flex align-items-center ${isDark ? 'bg-dark' : 'bg-light'}`}>
+                    <div className={`p-3 border-top d-flex align-items-center ${isDark ? 'bg-dark' : 'bg-light'}`}style={{
+                      position: 'sticky',
+                      bottom: 0,
+                      zIndex: 10,
+                      backgroundColor: isDark ? '#121212' : '#f9f9f9'
+                    }}>
                       {/* <input type="text" className="form-control me-2" placeholder="Your message" /> */}
                       <span className="input-group-text  border form-control rounded-4" style={{ backgroundColor: '#EEEFFA' }}>
                         <i className="fa-solid fa-paperclip"></i>
