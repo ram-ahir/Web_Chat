@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import mongoose, { Types } from 'mongoose';
 
 const app = express();
@@ -9,6 +10,10 @@ import { Server } from 'socket.io';
 
 const server = http.createServer(app);
 
+app.use(cors({
+  origin: 'https://web-chat-six-navy.vercel.app', // your Vercel frontend URL
+  credentials: true, // if using cookies or auth tokens
+}));
 app.use(express.json());
 
 const port = 3000;
