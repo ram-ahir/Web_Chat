@@ -92,7 +92,7 @@ const Home2 = () => {
     console.log(time);
 
     try {
-      const res = await axios.post('/api/create-message', {
+      const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-message', {
         sender: hostuseremail,
         receiver: receiveruser.Email,
         content: messageinpute,
