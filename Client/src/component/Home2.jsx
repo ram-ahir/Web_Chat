@@ -166,7 +166,7 @@ const Home2 = () => {
     setReceiveruser(Ruser);
     setHavereceiver(true);
     try {
-      const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-chat', {
+      const res = await axios.post('/api/create-chat', {
         members: [hostuseremail, Ruser.Email],
         messages: []
       });
@@ -176,7 +176,7 @@ const Home2 = () => {
       console.error('Error posting data:', err);
     }
     try {
-      const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/get-messages', {
+      const res = await axios.post('/api/get-messages', {
         members: [hostuseremail, Ruser.Email]
       });
       console.log('Response:', res.data.messages);
