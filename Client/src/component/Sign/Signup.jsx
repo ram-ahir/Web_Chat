@@ -53,7 +53,7 @@ const Signup = () => {
                     })
                     .then(async() => {
                         try {
-                            const res = await axios.post('/api/create-users', {
+                            const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-users', {
                                 profileImg: imgurl,
                                 name: name,
                                 Email: email,
@@ -77,7 +77,7 @@ const Signup = () => {
 
     const senddata = async () => {
         try {
-            const res = await axios.post('/api/create-users', {
+            const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-users', {
                 Email : email,
                 name : name,
                 username : username,
