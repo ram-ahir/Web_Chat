@@ -138,9 +138,9 @@ const Signup = () => {
                                 </div>
 
                             </form>
-                            <div className='d-flex align-items-center justify-content-center flex-column'>
+                            {/* <div className='d-flex align-items-center justify-content-center flex-column'>
                                 <button onClick={() => senddata()} className="btn btn-primary btn-lg btn-block ">send</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
