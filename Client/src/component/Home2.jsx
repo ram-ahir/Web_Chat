@@ -374,20 +374,28 @@ const Home2 = () => {
                     </div>
 
                     {/* Message Input */}
-                    <div className={`p-3 border-top d-flex align-items-center ${isDark ? 'bg-dark' : 'bg-light'}`}style={{
-                      position: 'sticky',
-                      bottom: 0,
-                      zIndex: 10,
-                      backgroundColor: isDark ? '#121212' : '#f9f9f9'
-                    }}>
-                      {/* <input type="text" className="form-control me-2" placeholder="Your message" /> */}
-                      <span className="input-group-text  border form-control rounded-4" style={{ backgroundColor: '#EEEFFA' }}>
-                        <i className="fa-solid fa-paperclip"></i>
-                        <input type="text" placeholder="Message" className="form-control py-0 border-0" style={{ boxShadow: "none", backgroundColor: '#EEEFFA' }} value={messageinpute} onChange={e => setMessageinpute(e.target.value)} />
+                    <div
+                      className={`p-3 border-top d-flex align-items-center ${isDark ? 'bg-dark' : 'bg-light'}`}
+                      style={{
+                        position: 'sticky',
+                        bottom: 0,
+                        zIndex: 10,
+                        backgroundColor: isDark ? '#121212' : '#f9f9f9'
+                      }}
+                      >
+                      <div className="d-flex align-items-center border form-control rounded-4 px-2" style={{ backgroundColor: '#EEEFFA' }}>
+                        <i className="fa-solid fa-paperclip me-2"></i>
+                        <input
+                          type="text"
+                          placeholder="Message"
+                          className="form-control py-0 border-0 flex-grow-1"
+                          style={{ boxShadow: "none", backgroundColor: '#EEEFFA' }}
+                          value={messageinpute}
+                          onChange={e => setMessageinpute(e.target.value)}
+                        />
                         <i className="bi bi-mic fs-5 text-muted me-3"></i>
-                        <i className="bi bi-send fs-5 text-primary  me-3" onClick={() => sendmessage()}></i>
-                      </span>
-
+                        <i className="bi bi-send fs-5 text-primary me-2" onClick={() => sendmessage()}></i>
+                      </div>
                     </div>
                   </div>
                 )}
