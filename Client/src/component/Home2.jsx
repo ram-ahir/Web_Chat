@@ -279,7 +279,7 @@ const Home2 = () => {
 
             {/* Chat Window */}
             <div className='flex-grow-1 '>
-              <div className={`d-flex flex-column flex-grow-1 h-100 ${isDark ? 'bg-dark' : 'bg-light'}`} >
+              <div className={`d-flex flex-column flex-grow-1 h-100 ${isDark ? 'bg-dark' : 'bg-light'}`} style={{ height: '100%' }}>
                 {!havereceiver && (
                   <div className="d-flex flex-column justify-content-center align-items-center text-center flex-grow-1">
                     <i className={`bi bi-chat-dots mb-3`} style={{ fontSize: '3rem', color: isDark ? 'white' : 'black' }}></i>
