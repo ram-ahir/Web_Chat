@@ -3,6 +3,7 @@ import './Loginstyle.css'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { SERVER_URL } from '../../../config';
 
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from '../../../firebase';
@@ -53,7 +54,7 @@ const Signup = () => {
                     })
                     .then(async() => {
                         try {
-                            const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-users', {
+                            const res = await axios.post(`${SERVER_URL}api/create-users`, {
                                 profileImg: imgurl,
                                 name: name,
                                 Email: email,
@@ -77,7 +78,7 @@ const Signup = () => {
 
     const senddata = async () => {
         try {
-            const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-users', {
+            const res = await axios.post(`${SERVER_URL}api/create-users`, {
                 Email : email,
                 name : name,
                 username : username,

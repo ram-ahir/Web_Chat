@@ -3,6 +3,8 @@ import './Home2style.css'
 import { toast } from 'react-toastify';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import {SERVER_URL} from '../../config';
+
 
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc, collection, query, where, getDocs } from "firebase/firestore";
@@ -12,7 +14,7 @@ const auth = getAuth(app);
 
 import { io } from 'socket.io-client';
 
-const socket = io('https://webchat-production-e26f.up.railway.app/'); // Replace with your server URL
+const socket = io(`${SERVER_URL}`); // Replace with your server URL
 
 
 
@@ -92,7 +94,7 @@ const Home2 = () => {
     console.log(time);
 
     try {
-      const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-message', {
+      const res = await axios.post(`${SERVER_URL}api/create-message`, {
         sender: hostuseremail,
         receiver: receiveruser.Email,
         content: messageinpute,
@@ -166,7 +168,7 @@ const Home2 = () => {
     setReceiveruser(Ruser);
     setHavereceiver(true);
     try {
-      const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/create-chat', {
+      const res = await axios.post(`${SERVER_URL}api/create-chat`, {
         members: [hostuseremail, Ruser.Email],
         messages: []
       });
@@ -176,7 +178,7 @@ const Home2 = () => {
       console.error('Error posting data:', err);
     }
     try {
-      const res = await axios.post('https://webchat-production-e26f.up.railway.app/api/get-messages', {
+      const res = await axios.post(`${SERVER_URL}api/get-messages`, {
         members: [hostuseremail, Ruser.Email]
       });
       console.log('Response:', res.data.messages);
